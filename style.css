@@ -503,17 +503,71 @@ footer {
 
 /* ── Mobile ── */
 @media (max-width: 640px) {
+
+  /* Nav: name only on left, hamburger hidden — just stack links below */
+  nav { height: auto; }
+  .nav-inner {
+    flex-wrap: wrap;
+    padding: 12px 16px 0;
+    gap: 0;
+  }
+  .nav-name {
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 1rem;
+  }
+  nav ul {
+    width: 100%;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    padding: 10px 0 12px;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  nav ul a { font-size: 0.72rem; }
+
+  /* Recalculate offset for taller nav */
   .home-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding-top: calc(var(--nav-h) + 40px);
+    gap: 32px;
+    padding-top: 120px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  .home-left { display: flex; flex-direction: column; }
-  .home-links { flex-direction: row; flex-wrap: wrap; gap: 12px; }
-  nav ul { gap: 16px; }
-  nav ul a { font-size: 0.72rem; }
-  .research-stream { grid-template-columns: 28px 1fr; gap: 16px; }
+  .page-layout {
+    padding-top: 120px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .home-left { display: flex; flex-direction: column; gap: 4px; }
+  .home-inst { margin-bottom: 16px; }
+  .home-links { flex-direction: column; gap: 6px; }
+
+  /* Research index */
+  .research-index li { grid-template-columns: 28px 1fr; gap: 10px; }
+  .research-index a { font-size: 1rem; }
+
+  /* Publications year groups */
+  .pub-year-group { grid-template-columns: 40px 1fr; gap: 0 12px; }
+  .pub-year-label { font-size: 0.75rem; }
+
+  /* Teaching: hide role column, shrink year */
   .teach-role { display: none; }
-  .teach-year { width: 90px; }
-  .contact-table td:first-child { width: 100px; }
+  .teach-year { width: 80px; font-size: 0.78rem; }
+  .teach-course { font-size: 0.83rem; }
+
+  /* Contact table */
+  .contact-table { display: block; }
+  .contact-table tbody { display: block; }
+  .contact-table tr { display: flex; flex-direction: column; padding: 14px 0; gap: 2px; }
+  .contact-table td { padding: 0; width: auto !important; font-size: 0.85rem; }
+  .contact-table td:first-child { padding-top: 0; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.08em; color: var(--gray-light); }
+
+  /* Subpages */
+  .subpage-lead { font-size: 0.93rem; }
+  .subpage-section h2 { font-size: 1.05rem; }
+
+  /* Research streams on research.html */
+  .research-stream { grid-template-columns: 28px 1fr; gap: 12px; }
 }
